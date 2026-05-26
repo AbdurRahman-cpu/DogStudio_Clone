@@ -1,0 +1,217 @@
+@import "tailwindcss";
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+    width: 100%;
+    background-color: black;
+    color: whitesmoke;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+main {
+    position: relative;
+}
+
+#canvas-elem:after {
+    content: "";
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    background-image:url("/background-l.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+section {
+    min-height: 100vh;
+    position: relative;
+    z-index: 2;
+}
+
+#section-1{
+    --gap: 1rem;
+    position: relative;
+    nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1.5rem 2.5rem;
+        padding-top: 3.5rem;
+
+        svg {
+            max-width: 5rem;
+            width: 100%;
+            height: 100%;
+        }
+    }
+
+    .middle {
+        display: flex;
+        gap: var(--gap);
+
+        .left,
+        .right {
+            width: 50%;
+        }
+
+        .left {
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            padding-block: 7rem;
+            font-family: GT Sectra Display, Times, Georgia, serif;
+            font-weight: 700;
+            font-style: normal;
+            fill: #fff;
+            color: #fff;
+            font-size: 8.5714285714rem;
+            letter-spacing: -.04em;
+            line-height: .8916666667;
+        }
+
+        h1 {
+            font-size: 5rem;
+            line-height: 0.8;
+            text-align: right;
+        }
+
+    }
+    .bottom {
+        display: flex;
+        gap: var(--gap);
+        padding-left:650px;
+        .left,.right {
+            width: 50%;
+        }
+        .right {
+            .p1{
+                margin-bottom: 20px;
+                font-family: Heebo, Helvetica, Arial, sans-serif;
+                font-weight: 200;
+                font-style: normal;
+                color: #fff;
+                font-size: 1.0428571429rem;
+                line-height: 1.52;
+            }
+            .p2{
+
+                font-family: Heebo, Helvetica, Arial, sans-serif;
+                font-weight: 400;
+                font-style: normal;
+                color: rgba(160, 168, 220, .7);
+                font-size: 0.70rem;
+                line-height: 1.7142857143;
+            }
+        }
+    }
+    .first-line {
+        width: 35rem;
+        background-color: rgba(255, 0, 0, 0.396);
+        height: 1px;
+        position: absolute;
+        transform: rotate(45deg) translate(0, -17rem);
+    }
+
+    .second-line {
+        width: 10rem;
+        background-color: rgba(255, 0, 0, 0.396);
+        height: 1px;
+        position: absolute;
+        transform: rotate(135deg);
+        top: 28%;
+        right: 12%;
+    }
+
+}
+
+#section-2{
+    .titles{
+        display: flex;
+        flex-direction: column;
+        padding: 10rem;
+        align-items: center;
+        gap: 2rem;
+        .title{
+            display: flex;
+            gap: 4rem;
+            opacity: 15%;
+            transition:all 0.3s linear;
+            cursor: pointer;
+            h1{
+                font-size: 3rem;
+                font-weight: 10;
+                line-height: 1;
+                justify-content: start;
+            }
+            small{
+                font-size: 0.5rem;
+                margin-top: 0.6rem;
+            }
+        }
+        .title:hover{
+            opacity: 50%;
+        }
+    }
+}
+
+main:has(#section-2 .title:hover) #canvas-elem::after {
+    opacity: 0;
+}
+.images{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    img{
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+        position: absolute;
+        top: 0;
+        left: 0;
+        opacity: 0;
+        transition: opacity 0.3s linear;
+    }
+}
+main:has(#section-2 .title[img-title="tomorrowland"]:hover) .images #tomorrowland {
+    opacity: 1;
+    background-color: rgb(4, 7, 24);
+}
+main:has(#section-2 .title[img-title="navy-pier"]:hover) .images #navy-pier {
+    opacity: 1;
+    background-color: rgb(4, 7, 24);
+}
+
+main:has(#section-2 .title[img-title="msi-chicago"]:hover) .images #msi-chicago {
+    opacity: 1;
+    background-color: rgb(4, 7, 24);
+}
+
+main:has(#section-2 .title[img-title="phone"]:hover) .images #phone {
+    opacity: 1;
+    background-color: rgb(4, 7, 24);
+}
+
+main:has(#section-2 .title[img-title="kikk"]:hover) .images #kikk {
+    opacity: 1;
+    background-color: rgba(1, 15, 92, 0.679);
+}
+main:has(#section-2 .title[img-title="kennedy"]:hover) .images #kennedy {
+    opacity: 1;
+    background-color: rgb(4, 7, 24);
+}
+main:has(#section-2 .title[img-title="opera"]:hover) .images #opera {
+    opacity: 1;
+    background-color: rgb(176, 4, 4);
+}
+
